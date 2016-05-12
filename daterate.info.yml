@@ -1,0 +1,10 @@
+name: Date Rate
+type: module
+description: A multi-value field of date and rate.
+package: Field types
+version: 1.0
+core: 8.x
+
+dependencies:
+  - field
+  - datetime

@@ -1,0 +1,4 @@
+data-entry:
+  css:
+    component:
+      css/data-entry.css: {}
