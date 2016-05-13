@@ -49,7 +49,7 @@ class DateRateDefaultWidget extends DateTimeDefaultWidget {
       '#required' => FALSE,
       '#weight' => 1,
     );
-// kint($element);
+
     return $element;
   }
 }
