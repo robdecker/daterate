@@ -1,0 +1,27 @@
+field.storage_settings.daterate:
+  type: field.storage_settings.datetime
+
+field.formatter.settings.daterate:
+  type: field.formatter.settings.datetime_default
+  mapping:
+    separator:
+      type: string
+      label: Character(s) to use in between the date/time and the rate
+    component_order:
+      type: string
+      label: The rendering order of the date/time and the rate
+    symbol:
+      type: string
+      label: Character(s) to use for the rate symbol
+    symbol_position:
+      type: string
+      label: The rendering order of the symbol and the rate
+    decimal_places:
+      type: integer
+      label: Number of decimal places to use
+    decimal_separator:
+      type: string
+      label: Character(s) to use for the decimal separator
+
+field.widget.settings.daterate:
+  type: datetime_default
