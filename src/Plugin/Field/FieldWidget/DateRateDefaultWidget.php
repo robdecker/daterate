@@ -26,10 +26,16 @@ class DateRateDefaultWidget extends DateTimeDefaultWidget {
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
     unset($element['#theme_wrappers']);
-    // $element['#theme_wrappers'][] = 'mydatetime_wrapper';
     $element['#attached']['library'][] = 'daterate/data-entry';
-    $element['#attributes']['class'][] = 'daterate-wrapper';
     $element['#type'] = 'fieldset';
+
+    $element['#attributes']['class'][] = 'daterate-wrapper';
+    if ($element['value']['#date_time_element'] == 'none') {
+      $element['#attributes']['class'][] = 'daterate-wrapper--date-rate';
+    }
+    else {
+      $element['#attributes']['class'][] = 'daterate-wrapper--date-time-rate';
+    }
 
     // Override DateTime's settings.
     $element['value']['#title'] = t('Date');
@@ -44,7 +50,6 @@ class DateRateDefaultWidget extends DateTimeDefaultWidget {
       '#type' => 'number',
       '#step' => '0.01',
       '#title' => t('Rate'),
-      '#field_prefix' => '$',
       '#default_value' => isset($items[$delta]->rate) ? $items[$delta]->rate : 0.0,
       '#required' => FALSE,
       '#weight' => 1,
